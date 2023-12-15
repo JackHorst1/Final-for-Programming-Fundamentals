@@ -1,0 +1,63 @@
+class Task:
+    def __init__(self, description):
+        self.description = description
+
+class TaskManager:
+    def __init__(self):
+        self.tasks_array = []
+
+    def add_task(self, task):
+        self.tasks_array.append(task)
+        print(f'Task "{task.description}" added.')
+
+    def display_tasks(self):
+        print("Task List:")
+        for index, task in enumerate(self.tasks_array, 1):
+            print(f'{index}. {task.description}')
+
+    def remove_task(self, task_description):
+        for task in self.tasks_array:
+            if task.description == task_description:
+                self.tasks_array.remove(task)
+                print(f'Task "{task.description}" removed.')
+                return
+        print(f'Task "{task_description}" not found.')
+
+def main():
+    task_manager = TaskManager()
+
+@@ -50,5 +25,34 @@ def main():
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
+
+class Task:
+    def __init__(self, description):
+        self.description = description
+
+class TaskManager:
+    def add_task(self, task):
+        self.tasks_array.append(task)
+        print(f'Task "{task.description}" added.')
+
+    def display_tasks(self):
+        print("Task List:")
+        for index, task in enumerate(self.tasks_array, 1):
+            print(f'{index}. {task.description}')
+
+    def __init__(self):
+        self.tasks_array = []
+
+    def remove_task(self, task_description):
+        for task in self.tasks_array:
+            if task.description == task_description:
+                self.tasks_array.remove(task)
+                print(f'Task "{task.description}" removed.')
+                return
+        print(f'Task "{task_description}" not found.')
+
+
+if __name__ == "__main__":
+    main()
+
+#ChatGPT Prompts:
+#"I need to make a simple task manager in python"
